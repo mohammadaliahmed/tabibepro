@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="#EEF1F6"
+    android:layout_height="match_parent"
+    tools:context=".activity.DoctorProfileActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/profile_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        style="@style/HeaderBar"
+        android:elevation="0dp"
+        >
+
+        <TextView
+            android:id="@+id/toolbar_title"
+            style="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:visibility="gone"
+            android:textColor="@android:color/white" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/profile_toolbar_image"
+            android:layout_width="@dimen/_50sdp"
+            android:layout_height="?attr/actionBarSize"
+            android:src="@drawable/images0"
+            app:civ_border_width="1dp"
+            android:padding="@dimen/_5sdp"
+            app:civ_border_color="#FF000000"/>
+
+        <LinearLayout
+            android:id="@+id/docInfo"
+            android:layout_toRightOf="@+id/profile_image"
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/speciality_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Prenez rendez-vous"
+                android:textColor="@color/white"
+                />
+
+            <TextView
+                android:id="@+id/docName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:text="Dr Alain Chemla"
+                android:textColor="@color/white"
+                />
+
+        </LinearLayout>
+        
+    </androidx.appcompat.widget.Toolbar>
+
+    <TextView
+        android:layout_below="@+id/profile_toolbar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:text="Choisissez votre motif de consultation"
+        android:id="@+id/title"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_centerInParent="true"
+        android:textStyle="bold"
+        />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/appointmentListView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/title"
+        android:layout_margin="@dimen/_15sdp"
+        android:background="@color/white"
+       />
+
+    <FrameLayout
+        android:id="@+id/fragmentContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/profile_toolbar"
+        android:layout_marginTop="0dp" />
+
+
+</RelativeLayout>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    android:clickable="true"
+    android:focusable="true"
+    tools:context=".fragment.PatientListFragment">
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Pour qui prenez-vous ce rendez-vous"
+        android:layout_gravity="center"
+        android:textStyle="bold"
+        android:layout_marginTop="@dimen/_20sdp"
+        />
+
+    <RadioGroup
+        android:layout_margin="@dimen/_15sdp"
+        android:id="@+id/radio_group"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <Button
+        android:id="@+id/makeAppointment"
+        android:layout_width="@dimen/_225sdp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:background="@drawable/rounded_corner"
+        android:text="Prendre rendez-vous"
+        />
+
+
+</LinearLayout>

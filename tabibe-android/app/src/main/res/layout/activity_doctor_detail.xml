@@ -1,0 +1,482 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activity.DoctorDetailActivity">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:weightSum="1">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight=".5">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/doc_cardview"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:elevation="@dimen/_20sdp">
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/placeholder1" />
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="@dimen/_50sdp">
+
+                            <RelativeLayout
+                                android:id="@+id/profile_image_layout"
+                                android:layout_width="@dimen/_80sdp"
+                                android:layout_height="@dimen/_80sdp"
+                                android:layout_centerHorizontal="true">
+
+                                <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+                                    android:id="@+id/profile_image"
+                                    android:layout_width="@dimen/_80sdp"
+                                    android:layout_height="@dimen/_80sdp"
+                                    android:padding="@dimen/_2sdp"
+                                    android:src="@drawable/images0"
+                                    app:civ_border_color="#FF000000"
+                                    app:civ_border_width="1dp" />
+                            </RelativeLayout>
+
+
+                            <TextView
+                                android:id="@+id/docName"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/profile_image_layout"
+                                android:padding="@dimen/_2sdp"
+                                android:text="Dr Alain Chemla"
+                                android:textColor="@color/colorPrimary"
+                                android:textSize="@dimen/_13sdp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/speciality"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/docName"
+                                android:padding="@dimen/_2sdp"
+                                android:layout_centerHorizontal="true"
+                                android:text=" Chirurgien-dentiste"
+                                android:textColor="@color/colorPrimary"
+                                android:textSize="@dimen/_10sdp"
+                                android:textStyle="bold" />
+
+                        </RelativeLayout>
+
+                        <ImageView
+                            android:id="@+id/backButton"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:padding="@dimen/_7sdp"
+                            android:src="@drawable/ic_arrow_back_ios" />
+
+                        <Button
+                            android:id="@+id/profileButton"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom|center_horizontal"
+                            android:layout_marginLeft="@dimen/_30sdp"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:layout_marginRight="@dimen/_30sdp"
+                            android:layout_marginBottom="@dimen/_10sdp"
+                            android:background="@drawable/rounded_corner"
+                            android:padding="@dimen/_2sdp"
+                            android:text="Prendre rendez-vous"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="15sp"
+                            android:textStyle="bold" />
+
+                    </FrameLayout>
+                </androidx.cardview.widget.CardView>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight=".5">
+
+                <androidx.core.widget.NestedScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <RelativeLayout
+                        android:id="@+id/firstlayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="@dimen/_15sdp"
+                        android:padding="@dimen/_10sdp">
+
+
+                        <LinearLayout
+                            android:id="@+id/locationView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            >
+
+                            <RelativeLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content">
+
+                                <ImageView
+                                    android:id="@+id/location_icon"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:src="@drawable/location"
+                                    />
+
+                                <TextView
+                                    android:id="@+id/location_text"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="@dimen/_10sdp"
+                                    android:layout_toRightOf="@id/location_icon"
+                                    android:textStyle="bold"
+                                    android:text="Adresse"
+                                    android:textColor="@color/colorPrimary" />
+
+                                <ImageView
+                                    android:id="@+id/plus_location"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentRight="true"
+                                    android:layout_marginRight="@dimen/_5sdp"
+                                    android:src="@drawable/detail"
+                                    android:visibility="gone"
+                                    />
+
+                                <TextView
+                                    android:id="@+id/location"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="@dimen/_10sdp"
+                                    android:layout_below="@id/location_text"
+                                    android:layout_toRightOf="@id/location_icon"
+                                    android:text="Institut de Protologie" />
+
+                            </RelativeLayout>
+
+                        </LinearLayout>
+
+
+
+                        <LinearLayout
+                            android:id="@+id/paymentview"
+                            android:layout_width="wrap_content"
+                            android:layout_below="@+id/locationView"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_8sdp"
+                            android:orientation="horizontal">
+
+
+                            <ImageView
+                                android:id="@+id/payment_sign"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/payment"
+                                android:layout_below="@+id/location_icon"/>
+
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:orientation="vertical"
+                                android:layout_marginLeft="@dimen/_10sdp"
+                                android:layout_height="wrap_content">
+
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Moyens de paiement"
+                                    android:textStyle="bold"
+                                    android:gravity="center"
+                                    android:textColor="@color/colorPrimary" />
+
+
+                                <TextView
+                                    android:id="@+id/mode_of_payment"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Moyens de paiement"
+                                    android:gravity="center" />
+
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+
+                        <View
+                            android:id="@+id/firstSeprator"
+                            android:layout_width="match_parent"
+                            android:layout_height="2dp"
+                            android:layout_below="@+id/paymentview"
+                            android:layout_marginTop="@dimen/_7sdp"
+                            android:layout_marginBottom="@dimen/_7sdp"
+                            android:background="#c0c0c0" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_below="@+id/firstSeprator"
+                            android:layout_height="wrap_content">
+
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/expertiesLayout"
+                                android:orientation="horizontal"
+                                android:visibility="gone"
+                                android:layout_marginTop="@dimen/_5sdp"
+                                >
+
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:src="@drawable/more"/>
+
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:orientation="vertical"
+                                    android:layout_marginLeft="@dimen/_10sdp"
+                                    android:layout_height="wrap_content">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:textStyle="bold"
+                                        android:text="Compétence"
+                                        android:textColor="@color/colorPrimary"
+                                        />
+
+                                    <TextView
+                                        android:id="@+id/experties"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+
+                                        android:text="Frais"
+                                        android:layout_marginTop="@dimen/_5sdp"
+                                        />
+
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/feeLayout"
+                                android:orientation="horizontal"
+                                android:visibility="gone"
+                                android:layout_marginTop="@dimen/_5sdp"
+                                >
+
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:src="@drawable/more"/>
+
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:orientation="vertical"
+                                    android:layout_marginLeft="@dimen/_10sdp"
+                                    android:layout_height="wrap_content">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:textStyle="bold"
+                                        android:text="Frais"
+                                        android:textColor="@color/colorPrimary"
+                                        />
+
+                                    <TextView
+                                        android:id="@+id/docFee"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+
+                                        android:text="Frais"
+                                        android:layout_marginTop="@dimen/_5sdp"
+                                        />
+
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/experienceLayout"
+                                android:orientation="horizontal"
+                                android:layout_marginTop="@dimen/_5sdp"
+                                android:visibility="gone"
+                                >
+
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:src="@drawable/more"
+                                    android:layout_below="@+id/location_icon"/>
+
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:orientation="vertical"
+                                    android:layout_marginLeft="@dimen/_10sdp"
+                                    android:layout_height="wrap_content">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:textStyle="bold"
+                                        android:text="Expérience"
+                                        android:textColor="@color/colorPrimary"
+                                        />
+
+                                    <TextView
+                                        android:id="@+id/experience"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+
+                                        android:text="Frais"
+                                        android:layout_marginTop="@dimen/_5sdp"
+                                        />
+
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/publicationView"
+                                android:orientation="horizontal"
+                                android:layout_marginTop="@dimen/_5sdp"
+                                android:visibility="gone"
+                                >
+
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:src="@drawable/more"
+                                    />
+
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:orientation="vertical"
+                                    android:layout_marginLeft="@dimen/_10sdp"
+                                    android:layout_height="wrap_content">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:textStyle="bold"
+                                        android:text="Publication d'oeuvres"
+                                        android:textColor="@color/colorPrimary"
+                                        />
+
+                                    <TextView
+                                        android:id="@+id/publications"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Frais"
+                                        android:layout_marginTop="@dimen/_5sdp"
+                                        />
+
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/languageView"
+                                android:orientation="horizontal"
+                                android:layout_marginTop="@dimen/_5sdp"
+                                android:visibility="gone"
+                                >
+
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:src="@drawable/more"
+                                    />
+
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:orientation="vertical"
+                                    android:layout_marginLeft="@dimen/_10sdp"
+                                    android:layout_height="wrap_content">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:textStyle="bold"
+                                        android:text="Langue parlée"
+                                        android:textColor="@color/colorPrimary"
+                                        />
+
+                                    <TextView
+                                        android:id="@+id/spokenLanguage"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Frais"
+                                        android:layout_marginTop="@dimen/_5sdp"
+                                        />
+
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+
+                        </LinearLayout>
+
+
+
+                    </RelativeLayout>
+
+                </androidx.core.widget.NestedScrollView>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

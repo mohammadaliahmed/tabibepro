@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#e4e4e4"
+    android:clickable="true"
+    android:focusable="true"
+    tools:context=".fragment.MyAppointmentDetail">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/white"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@color/accent"
+            android:padding="@dimen/_10sdp"
+            >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/date"
+                />
+
+            <TextView
+                android:id="@+id/appointment_date"
+                android:layout_width="wrap_content"
+                android:textColor="@color/white"
+                android:text="Vendari 19"
+                android:layout_gravity="center"
+                android:layout_marginLeft="@dimen/_8sdp"
+                android:layout_height="wrap_content" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/clock"
+                android:layout_marginLeft="@dimen/_10sdp"
+                />
+
+            <TextView
+                android:id="@+id/appointment_time"
+                android:layout_width="wrap_content"
+                android:textColor="@color/white"
+                android:layout_gravity="center"
+                android:text="12:19"
+                android:layout_marginLeft="@dimen/_8sdp"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/profile_image"
+                android:layout_width="@dimen/_60sdp"
+                android:layout_height="@dimen/_60sdp"
+                android:src="@drawable/images0"
+                app:civ_border_width="2dp"
+                android:padding="@dimen/_10sdp"
+                app:civ_border_color="#FF000000"/>
+
+            <LinearLayout
+                android:layout_toRightOf="@+id/profile_image"
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:padding="@dimen/_10sdp"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:textColor="@color/colorPrimary"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/docName"
+                    android:text="Dr Marie"
+                    android:textStyle="bold"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/speciality"
+                    android:text="dentist"
+                    android:layout_marginTop="@dimen/_3sdp"
+                    />
+
+            </LinearLayout>
+
+
+            <ImageView
+                android:id="@+id/arrow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/arrow_right"
+                android:layout_marginRight="@dimen/_10sdp"
+                />
+
+        </RelativeLayout>
+
+        <View
+            android:background="#e4e4e4"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_1sdp"/>
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_5sdp"
+            >
+
+            <ImageView
+                android:id="@+id/image"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/information_drawer"
+                android:padding="@dimen/_10sdp"
+                />
+
+            <LinearLayout
+                android:layout_toRightOf="@+id/image"
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:padding="@dimen/_10sdp"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:textColor="@color/colorPrimary"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Patient"
+                    android:textStyle="bold"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/patient_name"
+                    android:text="ramiz"
+                    android:layout_marginTop="@dimen/_3sdp"
+                    />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <View
+            android:background="#e4e4e4"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_1sdp"/>
+
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_5sdp"
+            >
+
+        <ImageView
+            android:id="@+id/phone_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/contact_phone"
+            android:padding="@dimen/_10sdp"
+            />
+
+            <TextView
+                android:id="@+id/phonenumber"
+                android:textColor="@color/colorPrimary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="123123"
+                android:padding="@dimen/_10sdp"
+                android:layout_toRightOf="@+id/phone_image"
+                android:textStyle="bold"
+                />
+
+        </RelativeLayout>
+
+        <View
+            android:background="#e4e4e4"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_1sdp"/>
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_5sdp"
+            >
+
+            <ImageView
+                android:id="@+id/location_image"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/location"
+                android:padding="@dimen/_10sdp"
+                />
+
+            <TextView
+                android:id="@+id/location"
+                android:textColor="@color/colorPrimary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="123123"
+                android:padding="@dimen/_10sdp"
+                android:layout_toRightOf="@+id/location_image"
+                android:textStyle="bold"
+                />
+
+        </RelativeLayout>
+
+        <View
+            android:background="#e4e4e4"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_1sdp"/>
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_5sdp"
+            >
+
+            <ImageView
+                android:id="@+id/mode_of_payment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/document_drawer"
+                android:padding="@dimen/_10sdp"
+                />
+
+            <LinearLayout
+                android:layout_toRightOf="@+id/mode_of_payment"
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:padding="@dimen/_10sdp"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:textColor="@color/colorPrimary"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Moyens de paiement"
+                    android:textStyle="bold"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/payment"
+                    android:layout_marginTop="@dimen/_3sdp"
+                    android:text="Cheques,especes et cartes bancaires"
+                    />
+
+            </LinearLayout>
+
+
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+
+
+</LinearLayout>

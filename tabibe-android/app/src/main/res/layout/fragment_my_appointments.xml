@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#e4e4e4"
+    android:clickable="true"
+    android:focusable="true"
+    tools:context=".fragment.MyAppointments">
+
+
+    <TextView
+        android:id="@+id/reserve_appointment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Prendre Un Rendez-vouse"
+        android:layout_gravity="center"
+        android:textStyle="bold"
+        android:textColor="@color/colorAccent"
+        android:layout_marginTop="@dimen/_10sdp"
+        />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/my_appointments_recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="@dimen/_15sdp"
+        android:layout_below="@+id/doc_cardview"
+        android:nestedScrollingEnabled="false"
+        android:overScrollMode="never" />
+
+
+</LinearLayout>

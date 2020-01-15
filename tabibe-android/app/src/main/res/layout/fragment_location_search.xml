@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clickable="true"
+    android:focusable="true"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    android:background="@android:color/white"
+    >
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/location_cardview"
+        android:elevation="@dimen/_10sdp"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_40sdp">
+
+        <EditText
+            android:id="@+id/location_search"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_40sdp"
+            android:background="@drawable/rounded_edittext"
+            android:hint="Emplacement "
+            android:inputType="text"
+            android:layout_weight=".8"
+            android:focusableInTouchMode="true"
+            android:paddingLeft="@dimen/_15sdp"
+            android:drawableRight="@drawable/ic_shortcut_ic_shortcut_arrow_back_ios"
+            />
+
+
+    </androidx.cardview.widget.CardView>
+
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_below="@+id/location_cardview"
+        android:nestedScrollingEnabled="false"
+        android:id="@+id/recyclerView_location"
+        android:layout_width="match_parent"
+        android:overScrollMode="never"
+        android:layout_height="match_parent"/>
+
+</RelativeLayout>
