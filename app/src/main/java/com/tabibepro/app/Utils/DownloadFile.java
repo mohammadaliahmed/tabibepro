@@ -24,7 +24,7 @@ public class DownloadFile {
         DownloadManager downloadManager = (DownloadManager) ApplicationClass.getInstance().getApplicationContext().getSystemService(DOWNLOAD_SERVICE);
         Uri uri = Uri.parse(Url);
         DownloadManager.Request request = new DownloadManager.Request(uri);
-//        request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
+        request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
         request.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS, filename);
         Long referene = downloadManager.enqueue(request);
     }

@@ -5,6 +5,8 @@
     <string name="nav_header_title">Android Studio</string>
     <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
+    <string name="error_gif">x or y bound size should be at least %1$dpx and file size should be no more than %2$sM</string>
+
     <string name="action_settings">Settings</string>
     <string name="password_valid_error">Le mot de passe doit contenir au moins 8 caracte\u0300res avec une lettre majuscule, minuscule, un caracte\u0300re spe\u0301cial (&amp;,@,# ,$..) et des chiffres</string>
 </resources>

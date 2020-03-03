@@ -43,13 +43,13 @@ public class ScheduleListAdapter extends RecyclerView.Adapter<ScheduleListAdapte
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull ViewHolder holder, final int position) {
         final ScheduleModel model = itemList.get(position);
         holder.time.setText(model.getStartTime() + " - " + model.getEndTime());
         holder.delete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                callbacks.onDelete(model);
+                callbacks.onDelete(model,position);
             }
         });
     }
@@ -71,6 +71,6 @@ public class ScheduleListAdapter extends RecyclerView.Adapter<ScheduleListAdapte
     }
 
     public interface ScheduleListCallbacks {
-        public void onDelete(ScheduleModel model);
+        public void onDelete(ScheduleModel model,int position);
     }
 }

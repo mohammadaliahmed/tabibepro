@@ -9,9 +9,11 @@ import android.net.Uri;
 import android.os.Handler;
 import android.os.Looper;
 import android.provider.MediaStore;
+import android.text.format.DateFormat;
 import android.widget.Toast;
 
 import java.io.IOException;
+import java.util.Calendar;
 import java.util.List;
 import java.util.Locale;
 
@@ -36,8 +38,6 @@ public class CommonUtils {
     private CommonUtils() {
         // This utility class is not publicly instantiable
     }
-
-
 
 
     public static String getFullAddress(Context context, Double lat, Double lon) {
@@ -70,6 +70,16 @@ public class CommonUtils {
     }
 
 
+    public static String getDate(long smsTimeInMilis) {
+        Calendar smsTime = Calendar.getInstance();
+        smsTime.setTimeInMillis(smsTimeInMilis);
+
+        Calendar now = Calendar.getInstance();
+
+
+        return DateFormat.format("yyyy-MM-dd", smsTime).toString();
+
+    }
 
     public static void showToast(final String msg) {
         new Handler(Looper.getMainLooper()).post(new Runnable() {
@@ -79,9 +89,19 @@ public class CommonUtils {
             }
         });
     }
+    
 
-
-
+    public static String commaSeparated(List<String> list) {
+        String abc = "";
+        for (String value : list) {
+            if (abc.equalsIgnoreCase("")) {
+                abc = value;
+            } else {
+                abc = abc + "," + value;
+            }
+        }
+        return abc;
+    }
 
 
 }

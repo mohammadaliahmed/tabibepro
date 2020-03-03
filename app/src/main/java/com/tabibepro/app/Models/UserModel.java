@@ -3,6 +3,8 @@ package com.tabibepro.app.Models;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+import androidx.annotation.NonNull;
+
 public class UserModel {
     @SerializedName("id")
     @Expose
@@ -289,5 +291,11 @@ public class UserModel {
 
     public void setStatus(String status) {
         this.status = status;
+    }
+
+    @NonNull
+    @Override
+    public String toString() {
+        return super.toString();
     }
 }

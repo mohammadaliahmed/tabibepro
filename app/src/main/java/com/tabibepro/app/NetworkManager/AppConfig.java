@@ -7,7 +7,7 @@ public class AppConfig {
     static String BASE_URL = "https://tabibe.ovh";
     public static String API_USERNAME = "tabibe_api_admin";
    public  static String API_PASSWORD = "M,(}^dV]q$Z~r2?r";
-    public static String BASE_URL_Image = "https://tabibe.ovh";
+    public static String BASE_URL_Image = "https://tabibe.ovh/resources/uploads/";
 
 
     public static Retrofit getRetrofit() {

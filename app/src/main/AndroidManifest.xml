@@ -40,6 +40,7 @@
         <activity android:name=".Activities.AddAppointment" />
         <activity android:name=".Activities.UserManagement.Register" />
         <activity android:name=".Activities.UserManagement.Login" />
+        <activity android:name=".Activities.AddPrescription" />
     </application>
 
 </manifest>

@@ -40,6 +40,7 @@
 
 
                     <TextView
+                        android:id="@+id/startTime"
                         android:layout_width="match_parent"
                         android:layout_height="40dp"
                         android:layout_gravity="center"
@@ -68,6 +69,7 @@
 
 
                     <TextView
+                        android:id="@+id/endTime"
                         android:layout_width="match_parent"
                         android:layout_height="40dp"
                         android:layout_gravity="center"
@@ -94,6 +96,7 @@
                 android:background="@drawable/edit_text_bg">
 
                 <Spinner
+                    android:id="@+id/spinner"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
@@ -106,6 +109,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_margin="10dp"
+                android:id="@+id/update"
                 android:background="@drawable/btn_bg"
                 android:inputType="text"
                 android:text="Update"
