@@ -20,10 +20,10 @@
             android:id="@+id/nav_schedule"
             android:icon="@drawable/ic_schedule"
             android:title="My Schedule" />
-        <item
-            android:id="@+id/nav_appointments"
-            android:icon="@drawable/ic_appointments"
-            android:title="My Appointments" />
+<!--        <item-->
+<!--            android:id="@+id/nav_appointments"-->
+<!--            android:icon="@drawable/ic_appointments"-->
+<!--            android:title="My Appointments" />-->
         <item
             android:id="@+id/nav_signuout"
             android:icon="@drawable/ic_logout"

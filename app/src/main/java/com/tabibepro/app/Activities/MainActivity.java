@@ -375,10 +375,12 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.nav_schedule) {
             startActivity(new Intent(MainActivity.this, MySchedule.class));
 
-        } else if (id == R.id.nav_appointments) {
-
-
-        } else if (id == R.id.nav_signuout) {
+        }
+//        else if (id == R.id.nav_appointments) {
+//
+//
+//        }
+        else if (id == R.id.nav_signuout) {
             SharedPrefs.logout();
             Intent i = new Intent(MainActivity.this, Splash.class);
             i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK);

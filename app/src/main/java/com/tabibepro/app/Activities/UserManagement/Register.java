@@ -194,7 +194,7 @@ public class Register extends AppCompatActivity {
 
                 } else if (response.code() == 200) {
                     if (response.body() != null) {
-//                        CommonUtils.showToast(response.body().getMessage());
+                        CommonUtils.showToast(response.body().getMessage());
 //                        UserModel model = new UserModel();
 //                        model.setFirstName(firstName.getText().toString());
 //                        model.setLastName(lastName.getText().toString());
@@ -202,7 +202,10 @@ public class Register extends AppCompatActivity {
 //                        model.setGender(gender);
 //                        SharedPrefs.setUserModel(model);
 //                        launchHomeScreen();
-                        loginUser();
+//                        loginUser();
+                        Intent i = new Intent(Register.this, Login.class);
+                        i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+                        startActivity(i);
 
                     }
                 }

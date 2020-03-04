@@ -94,10 +94,12 @@ public class CommonUtils {
     public static String commaSeparated(List<String> list) {
         String abc = "";
         for (String value : list) {
-            if (abc.equalsIgnoreCase("")) {
-                abc = value;
-            } else {
-                abc = abc + "," + value;
+            if(value!=null) {
+                if (abc.equalsIgnoreCase("")) {
+                    abc = value;
+                } else {
+                    abc = abc + "," + value;
+                }
             }
         }
         return abc;
