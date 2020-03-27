@@ -74,7 +74,7 @@ public class MySchedule extends AppCompatActivity {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
             getSupportActionBar().setDisplayShowHomeEnabled(true);
         }
-        this.setTitle("My Schedule");
+        this.setTitle("Mes horaires");
         wholeLayout = findViewById(R.id.wholeLayout);
         listLayout = findViewById(R.id.listLayout);
         recyclerview = findViewById(R.id.recyclerview);

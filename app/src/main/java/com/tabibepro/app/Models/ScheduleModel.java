@@ -31,6 +31,17 @@ public class ScheduleModel {
     @SerializedName("updated_by")
     @Expose
     private String updatedBy;
+    @SerializedName("is_free")
+    @Expose
+    private String is_free;
+
+    public String getIs_free() {
+        return is_free;
+    }
+
+    public void setIs_free(String is_free) {
+        this.is_free = is_free;
+    }
 
     public String getId() {
         return id;

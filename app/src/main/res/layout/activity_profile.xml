@@ -56,7 +56,7 @@
                                 android:id="@+id/firstName"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:hint="First Name"
+                                android:hint="Prénom"
                                 android:inputType="textCapWords" />
                         </com.google.android.material.textfield.TextInputLayout>
 
@@ -70,7 +70,7 @@
                                 android:id="@+id/lastName"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:hint="Last Name"
+                                android:hint="Nom de famille"
                                 android:inputType="textCapWords" />
                         </com.google.android.material.textfield.TextInputLayout>
 
@@ -86,7 +86,7 @@
                             android:id="@+id/email"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:hint="Email"
+                            android:hint="Adresse e-mail"
                             android:inputType="textEmailAddress" />
                     </com.google.android.material.textfield.TextInputLayout>
 
@@ -100,7 +100,7 @@
                             android:id="@+id/password"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:hint="Password"
+                            android:hint="Mot de passe"
                             android:inputType="textPassword" />
                     </com.google.android.material.textfield.TextInputLayout>
 
@@ -114,7 +114,7 @@
                             android:id="@+id/confirmPassword"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:hint="Confirm Password"
+                            android:hint="Confirmez le mot de passe"
                             android:inputType="textPassword" />
                     </com.google.android.material.textfield.TextInputLayout>
 
@@ -127,7 +127,7 @@
                             android:id="@+id/phone"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:hint="Phone"
+                            android:hint="Numéro de téléphone"
                             android:inputType="phone" />
                     </com.google.android.material.textfield.TextInputLayout>
 
@@ -143,8 +143,7 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
                             android:layout_margin="10dp"
-                            android:text="Select Gender:"
-                            android:textSize="18sp" />
+                            android:text="Le sexe:" />
 
 
                         <RadioGroup
@@ -155,18 +154,18 @@
 
                             <RadioButton
                                 android:id="@+id/male"
-                                android:checked="true"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_margin="10dp"
-                                android:text="Male" />
+                                android:checked="true"
+                                android:text="Mâle" />
 
                             <RadioButton
                                 android:id="@+id/female"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_margin="10dp"
-                                android:text="Female" />
+                                android:text="Femelle" />
                         </RadioGroup>
                     </LinearLayout>
 
@@ -175,7 +174,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="10dp"
                         android:layout_marginTop="10dp"
-                        android:text="Select City" />
+                        android:text="Ville" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -226,7 +225,7 @@
                                 android:id="@+id/fee"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:hint="Fee"
+                                android:hint="Frais"
                                 android:inputType="number" />
                         </com.google.android.material.textfield.TextInputLayout>
 
@@ -240,7 +239,7 @@
                                 android:id="@+id/feeUnit"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:hint="Fee Unit"
+                                android:hint="Unité de frais"
                                 android:inputType="textCapWords" />
                         </com.google.android.material.textfield.TextInputLayout>
 
@@ -254,7 +253,7 @@
                                 android:id="@+id/method"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:hint="Method"
+                                android:hint="Modes de paiement"
                                 android:inputType="textCapWords" />
                         </com.google.android.material.textfield.TextInputLayout>
 
@@ -269,7 +268,7 @@
                             android:id="@+id/clinicAddress"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:hint="Clinic Address"
+                            android:hint="Adresse de la clinique"
                             android:inputType="textCapWords" />
                     </com.google.android.material.textfield.TextInputLayout>
 
@@ -282,7 +281,7 @@
                             android:id="@+id/medicalPost"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:hint="Medical post"
+                            android:hint="Poste médical"
                             android:inputType="textCapWords" />
                     </com.google.android.material.textfield.TextInputLayout>
 
@@ -291,7 +290,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="10dp"
                         android:layout_marginTop="10dp"
-                        android:text="Select Consultation" />
+                        android:text="Raison de la consultation" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -306,7 +305,7 @@
 
                             android:layout_margin="10dp"
                             android:padding="10dp"
-                            android:text="Select Consultation reason" />
+                            android:text="Raison de la consultation" />
 
                     </LinearLayout>
 
@@ -320,7 +319,7 @@
                             android:id="@+id/trainings"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:hint="Trainings"
+                            android:hint="Les associations"
                             android:inputType="textCapWords" />
                     </com.google.android.material.textfield.TextInputLayout>
 
@@ -346,7 +345,7 @@
                             android:id="@+id/experiences"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:hint="Experiences"
+                            android:hint="Expériences"
                             android:inputType="textCapWords" />
                     </com.google.android.material.textfield.TextInputLayout>
 
@@ -360,7 +359,7 @@
                             android:id="@+id/work"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:hint="Works Publications"
+                            android:hint="Publications de travaux"
                             android:inputType="textCapWords" />
                     </com.google.android.material.textfield.TextInputLayout>
 
@@ -369,7 +368,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="10dp"
                         android:layout_marginTop="10dp"
-                        android:text="Select Specialities" />
+                        android:text="Spécialité" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -396,7 +395,7 @@
                             android:id="@+id/spokenLanguage"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:hint="Spoken Languages"
+                            android:hint="Langues parlées"
                             android:inputType="textCapWords" />
                     </com.google.android.material.textfield.TextInputLayout>
 

@@ -1,25 +1,24 @@
-package com.tabibepro.app.Activities.UserManagement;
+package com.tabibepro.app.Activities;
 
 import android.content.Intent;
+import android.graphics.Color;
+import android.os.Build;
 import android.os.Bundle;
-import android.util.Log;
+import android.os.Handler;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RelativeLayout;
-import android.widget.TextView;
-import android.widget.Toast;
 
-
-import com.tabibepro.app.Activities.MainActivity;
-import com.tabibepro.app.Activities.ResetPassword;
+import com.tabibepro.app.Activities.UserManagement.Login;
 import com.tabibepro.app.Models.UserModel;
 import com.tabibepro.app.NetworkManager.AppConfig;
 import com.tabibepro.app.NetworkManager.UserClient;
 import com.tabibepro.app.NetworkResponses.LoginResponse;
 import com.tabibepro.app.R;
 import com.tabibepro.app.Utils.CommonUtils;
-import com.tabibepro.app.Utils.PrefManager;
 import com.tabibepro.app.Utils.SharedPrefs;
 
 import org.json.JSONException;
@@ -32,70 +31,47 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
+public class ResetPassword extends AppCompatActivity {
 
-public class Login extends AppCompatActivity {
 
-    EditText email, password;
-    Button login;
-
+    EditText email;
+    Button reset, login;
     RelativeLayout wholeLayout;
-
-    Button signup;
-    TextView forgot;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
+        setContentView(R.layout.activity_reset_password);
 
-
-        password = findViewById(R.id.password);
-        forgot = findViewById(R.id.forgot);
         email = findViewById(R.id.email);
-        signup = findViewById(R.id.signup);
-        login = findViewById(R.id.login);
+        reset = findViewById(R.id.reset);
         wholeLayout = findViewById(R.id.wholeLayout);
+        login = findViewById(R.id.login);
 
-        signup.setOnClickListener(new View.OnClickListener() {
+        reset.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(Login.this, Register.class));
+                if (email.getText().length() == 0) {
+                    email.setError("Enter email");
+                } else {
+                    callResetApi();
+                }
             }
         });
 
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-//                startActivity(new Intent(Login.this,MainActivity.class));
-                if (email.getText().length() == 0) {
-                    email.setError("Enter email");
-                } else if (!email.getText().toString().contains("@")) {
-                    email.setError("Enter valid email");
-                } else if (password.getText().length() == 0) {
-                    password.setError("Enter password");
-                } else {
-
-                    loginUser();
-                }
+                finish();
             }
         });
-
-        forgot.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(Login.this, ResetPassword.class));
-            }
-        });
-
 
     }
 
-
-    private void loginUser() {
+    private void callResetApi() {
         wholeLayout.setVisibility(View.VISIBLE);
         UserClient getResponse = AppConfig.getRetrofit().create(UserClient.class);
-        Call call = getResponse.loginUser(AppConfig.API_USERNAME, AppConfig.API_PASSWORD, email.getText().toString(), password.getText().toString());
+        Call call = getResponse.forget_password(AppConfig.API_USERNAME, AppConfig.API_PASSWORD, email.getText().toString());
         call.enqueue(new Callback<LoginResponse>() {
             @Override
             public void onResponse(Call<LoginResponse> call, Response<LoginResponse> response) {
@@ -123,20 +99,12 @@ public class Login extends AppCompatActivity {
                     }
 
                 } else if (response.code() == 200) {
-                    if (response.body() != null && response.body().getData() != null) {
-                        if (response.body().getData().size() > 0) {
-                            CommonUtils.showToast(response.body().getMessage());
-                            UserModel model = response.body().getData().get(0);
-                            if (model != null) {
-                                wholeLayout.setVisibility(View.GONE);
-                                SharedPrefs.setUserModel(model);
-                                launchHomeScreen();
-                            }
+                    if (response.body() != null) {
 
-                        } else {
-                            wholeLayout.setVisibility(View.GONE);
-                            CommonUtils.showToast("Wrong email or password");
-                        }
+                        CommonUtils.showToast(response.body().getMessage());
+                        finish();
+
+
                     }
                 }
 
@@ -152,8 +120,4 @@ public class Login extends AppCompatActivity {
         });
     }
 
-    private void launchHomeScreen() {
-        startActivity(new Intent(Login.this, MainActivity.class));
-        finish();
-    }
 }

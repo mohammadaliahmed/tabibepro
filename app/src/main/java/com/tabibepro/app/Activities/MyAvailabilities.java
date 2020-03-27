@@ -55,7 +55,7 @@ public class MyAvailabilities extends AppCompatActivity {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
             getSupportActionBar().setDisplayShowHomeEnabled(true);
         }
-        this.setTitle("My Availabilities");
+        this.setTitle("Mes disponibilités");
 
         wholeLayout = findViewById(R.id.wholeLayout);
 

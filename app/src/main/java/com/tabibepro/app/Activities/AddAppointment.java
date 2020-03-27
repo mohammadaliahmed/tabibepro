@@ -79,6 +79,7 @@ public class AddAppointment extends AppCompatActivity {
             getSupportActionBar().setDisplayShowHomeEnabled(true);
         }
         this.setTitle("Add Appointment");
+        this.setTitle("Ajouter un rendez-vous");
 
 
         initUi();
@@ -354,7 +355,14 @@ public class AddAppointment extends AppCompatActivity {
                 if (response.code() == 200) {
                     ScheduleListResponse object = response.body();
                     if (object != null && object.getData() != null && object.getData().size() > 0) {
-                        slotsList = object.getData();
+//                        slotsList = object.getData();
+                        slotsList.clear();
+                        List<ScheduleModel> list = object.getData();
+                        for(ScheduleModel model:list){
+                            if(model.getIs_free().equalsIgnoreCase("y")){
+                                slotsList.add(model);
+                            }
+                        }
                         setupDOctorSlotsSpinner();
                     }
                 }

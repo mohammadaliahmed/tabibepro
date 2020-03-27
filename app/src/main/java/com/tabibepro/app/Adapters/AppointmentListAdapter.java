@@ -47,8 +47,8 @@ public class AppointmentListAdapter extends RecyclerView.Adapter<AppointmentList
     public void onBindViewHolder(@NonNull ViewHolder holder, final int position) {
         final AppointmentsModel model = itemList.get(position);
 
-        holder.patientInfo.setText("Name: " + model.getPatientName() + "\nPhone: " + model.getPhone());
-        holder.bookingInfo.setText("Date: " + model.getAppointmentDate() + "\nSlot: " + model.getDoctorSlot());
+        holder.patientInfo.setText("Nom : " + model.getPatientName() + "\nRaison: " + model.getConsultationReasonName());
+        holder.bookingInfo.setText("Téléphone : " + model.getAppointmentDate() + "\nFente: " + model.getDoctorSlot());
 
         holder.delete.setOnClickListener(new View.OnClickListener() {
             @Override

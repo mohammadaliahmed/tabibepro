@@ -76,7 +76,7 @@
                 android:layout_weight="1"
                 android:background="@drawable/btn_bg_blue"
                 android:inputType="text"
-                android:text="Ordinance"
+                android:text="Ordonnance"
                 android:textColor="#fff" />
 
             <Button
@@ -87,7 +87,7 @@
                 android:layout_weight="1"
                 android:background="@drawable/btn_bg_red"
                 android:inputType="text"
-                android:text="Delete"
+                android:text="Effacer"
                 android:textColor="#fff" />
 
         </LinearLayout>

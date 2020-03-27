@@ -99,7 +99,7 @@ public class Profile extends AppCompatActivity {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
             getSupportActionBar().setDisplayShowHomeEnabled(true);
         }
-        this.setTitle("My Profile");
+        this.setTitle("Mon profil");
         initUi();
         getDataFromServer();
     }

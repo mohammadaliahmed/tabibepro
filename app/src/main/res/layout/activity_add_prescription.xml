@@ -32,7 +32,7 @@
                 android:layout_gravity="top"
                 android:background="@drawable/edit_text_bg"
                 android:gravity="top"
-                android:hint="Description"
+                android:hint="La description"
                 android:inputType="textCapSentences"
                 android:padding="5dp" />
 
@@ -43,7 +43,7 @@
                 android:layout_gravity="center"
                 android:layout_margin="20dp"
                 android:background="@drawable/btn_bg"
-                android:text="Submit"
+                android:text="Soumettre"
                 android:textColor="#fff" />
 
             <RelativeLayout

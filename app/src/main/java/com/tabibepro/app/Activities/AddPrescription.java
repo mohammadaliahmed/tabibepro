@@ -85,7 +85,7 @@ public class AddPrescription extends AppCompatActivity {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
             getSupportActionBar().setDisplayShowHomeEnabled(true);
         }
-        this.setTitle("Add prescription");
+        this.setTitle("Ajouter une ordonnance");
         getPermissions();
 
         appointmentId = getIntent().getStringExtra("appointmentId");
@@ -131,8 +131,8 @@ public class AddPrescription extends AppCompatActivity {
 
     private void showAlert(final PrescriptionModel model, final int position) {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("Alert");
-        builder.setMessage("Do you want to delete this prescription? ");
+        builder.setTitle("Alerte");
+        builder.setMessage("Voulez-vous supprimer cette prescription? ");
 
         // add the buttons
         builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
@@ -157,7 +157,7 @@ public class AddPrescription extends AppCompatActivity {
             @Override
             public void onResponse(Call<PrescriptionResponse> call, Response<PrescriptionResponse> response) {
                 if (response.code() == 200) {
-                    CommonUtils.showToast("Prescription removed");
+                    CommonUtils.showToast("Ordonnance supprimée");
                     itemList.remove(position);
                     adapter.setItemList(itemList);
                 } else {
@@ -185,7 +185,7 @@ public class AddPrescription extends AppCompatActivity {
                 if (response.code() == 200) {
                     description.setText("");
                     Glide.with(AddPrescription.this).load(R.drawable.ic_menu_gallery).into(pickImage);
-                    CommonUtils.showToast("Prescription added");
+                    CommonUtils.showToast("Prescription ajoutée");
                     getDataFromServer();
                 } else {
                     CommonUtils.showToast(response.message());

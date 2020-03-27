@@ -39,6 +39,15 @@ public interface UserClient {
 
     );
 
+    @POST("doctor_api/forget_password")
+    @FormUrlEncoded
+    Call<LoginResponse> forget_password(
+            @Field("api_username") String apiUsername,
+            @Field("api_password") String apiPassword,
+            @Field("doctor_email") String email
+
+    );
+
     @POST("doctor_api/signup_doctor")
     @FormUrlEncoded
     Call<LoginResponse> registerUser(

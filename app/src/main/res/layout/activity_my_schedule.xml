@@ -36,7 +36,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="10dp"
                         android:layout_marginBottom="10dp"
-                        android:text="Start Time" />
+                        android:text="Heure de début" />
 
 
                     <TextView
@@ -47,7 +47,7 @@
                         android:layout_weight="1"
                         android:background="@drawable/edit_text_bg"
                         android:gravity="center"
-                        android:text="Start Time"
+                        android:text="Heure de début"
                         android:textColor="#000" />
                 </LinearLayout>
 
@@ -65,7 +65,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="10dp"
                         android:layout_marginBottom="10dp"
-                        android:text="End Time" />
+                        android:text="Heure de fin" />
 
 
                     <TextView
@@ -76,7 +76,7 @@
                         android:layout_weight="1"
                         android:background="@drawable/edit_text_bg"
                         android:gravity="center"
-                        android:text="End Time"
+                        android:text="Heure de fin"
                         android:textColor="#000" />
                 </LinearLayout>
 
@@ -87,7 +87,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
-                android:text="Slot duration" />
+                android:text="Durée de la fente" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -105,25 +105,25 @@
             </LinearLayout>
 
             <Button
+                android:id="@+id/update"
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_margin="10dp"
-                android:id="@+id/update"
                 android:background="@drawable/btn_bg"
                 android:inputType="text"
-                android:text="Update"
+                android:text="Soumettre"
                 android:textColor="#fff" />
 
             <LinearLayout
-                android:layout_width="match_parent"
                 android:id="@+id/listLayout"
-                android:layout_marginBottom="30dp"
-
-                android:visibility="gone"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+
+                android:layout_marginBottom="30dp"
                 android:background="@drawable/edit_text_bg"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:visibility="gone">
 
                 <RelativeLayout
                     android:layout_width="match_parent"
@@ -134,7 +134,7 @@
                         android:layout_height="wrap_content"
                         android:layout_centerVertical="true"
                         android:layout_marginLeft="25dp"
-                        android:text="Slot"
+                        android:text="Fente"
                         android:textColor="#000"
                         android:textStyle="bold" />
 

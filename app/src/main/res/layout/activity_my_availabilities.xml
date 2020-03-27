@@ -22,7 +22,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="15dp"
                 
-                android:text="Monday" />
+                android:text="Lundi" />
 
             <CheckBox
                 android:id="@+id/tuesday"
@@ -30,7 +30,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="15dp"
                 
-                android:text="Tuesday" />
+                android:text="Mardi" />
 
             <CheckBox
                 android:id="@+id/wednesday"
@@ -38,7 +38,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="15dp"
                 
-                android:text="Wednesday" />
+                android:text="Mercredi" />
 
             <CheckBox
                 android:id="@+id/thursday"
@@ -46,7 +46,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="15dp"
                 
-                android:text="Thursday" />
+                android:text="Jeudi" />
 
             <CheckBox
                 android:id="@+id/friday"
@@ -54,7 +54,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="15dp"
                 
-                android:text="Friday" />
+                android:text="Vendredi" />
 
             <CheckBox
                 android:id="@+id/saturday"
@@ -62,7 +62,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="15dp"
                 
-                android:text="Saturday" />
+                android:text="Samedi" />
 
             <CheckBox
                 android:id="@+id/sunday"
@@ -70,7 +70,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="15dp"
                 
-                android:text="Sunday" />
+                android:text="Dimanche" />
         </GridLayout>
 
         <Button
@@ -80,7 +80,7 @@
             android:layout_gravity="center"
             android:layout_margin="20dp"
             android:background="@drawable/btn_bg"
-            android:text="Update"
+            android:text="Enregistrer"
             android:textColor="#fff" />
 
     </LinearLayout>

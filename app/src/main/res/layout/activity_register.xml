@@ -24,7 +24,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_margin="5dp"
-            android:text="Register"
+            android:text="S'inscrire"
             android:textSize="17sp" />
 
         <LinearLayout
@@ -43,7 +43,7 @@
                     android:id="@+id/firstName"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="First Name"
+                    android:hint="Prénom"
                     android:inputType="textCapWords" />
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -57,7 +57,7 @@
                     android:id="@+id/lastName"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Last Name"
+                    android:hint="Nom de famille"
                     android:inputType="textCapWords" />
             </com.google.android.material.textfield.TextInputLayout>
         </LinearLayout>
@@ -76,7 +76,7 @@
                 android:layout_gravity="center"
                 android:layout_margin="10dp"
                 android:layout_weight="1"
-                android:text="Gender:"
+                android:text="Le genre:"
                 android:textSize="17sp" />
 
             <RadioGroup
@@ -90,14 +90,14 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="5dp"
-                    android:text="Male" />
+                    android:text="Mâle" />
 
                 <RadioButton
                     android:id="@+id/female"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="5dp"
-                    android:text="Female" />
+                    android:text="Femelle" />
             </RadioGroup>
         </LinearLayout>
 
@@ -124,7 +124,7 @@
                 android:id="@+id/password"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Password"
+                android:hint="Mot de passe"
                 android:inputType="textPassword" />
         </com.google.android.material.textfield.TextInputLayout>
 

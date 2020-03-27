@@ -49,7 +49,7 @@ public class PrescriptionListAdapter extends RecyclerView.Adapter<PrescriptionLi
     public void onBindViewHolder(@NonNull ViewHolder holder, final int position) {
         final PrescriptionModel model = itemList.get(position);
 
-        String sourceString = "<b>Description: </b> " + model.getDescription();
+        String sourceString = "<b>La description: </b> " + model.getDescription();
         holder.description.setText(Html.fromHtml(sourceString));
         Glide.with(context).load(model.getImageUrl()).into(holder.image);
 

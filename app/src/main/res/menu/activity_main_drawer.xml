@@ -11,15 +11,15 @@
         <item
             android:id="@+id/nav_profile"
             android:icon="@drawable/ic_profile"
-            android:title="Profile" />
+            android:title="Mon profil" />
         <item
             android:id="@+id/nav_availabilities"
             android:icon="@drawable/ic_available"
-            android:title="My Availabilities" />
+            android:title="Mes disponibilités" />
         <item
             android:id="@+id/nav_schedule"
             android:icon="@drawable/ic_schedule"
-            android:title="My Schedule" />
+            android:title="Mes horaires" />
 <!--        <item-->
 <!--            android:id="@+id/nav_appointments"-->
 <!--            android:icon="@drawable/ic_appointments"-->
@@ -27,7 +27,7 @@
         <item
             android:id="@+id/nav_signuout"
             android:icon="@drawable/ic_logout"
-            android:title="Signout" />
+            android:title="Déconnexion" />
     </group>
 
 </menu>

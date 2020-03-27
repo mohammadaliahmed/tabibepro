@@ -81,6 +81,8 @@ public class MainActivity extends AppCompatActivity
         noAppintments = findViewById(R.id.noAppintments);
         recyclerview = findViewById(R.id.recyclerview);
         progress = findViewById(R.id.progress);
+        calender.setMinDate(System.currentTimeMillis() - 1000);
+
 
         addAppointment.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -339,7 +341,7 @@ public class MainActivity extends AppCompatActivity
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.main, menu);
+//        getMenuInflater().inflate(R.menu.main, menu);
         return true;
     }
 

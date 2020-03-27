@@ -41,6 +41,7 @@
         <activity android:name=".Activities.UserManagement.Register" />
         <activity android:name=".Activities.UserManagement.Login" />
         <activity android:name=".Activities.AddPrescription" />
+        <activity android:name=".Activities.ResetPassword" />
     </application>
 
 </manifest>

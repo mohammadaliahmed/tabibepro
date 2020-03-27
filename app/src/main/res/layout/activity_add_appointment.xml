@@ -61,7 +61,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="15dp"
                         android:layout_marginTop="10dp"
-                        android:text="*Slot"
+                        android:text="*Fente"
                         android:textColor="#000" />
 
                     <LinearLayout
@@ -90,7 +90,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="15dp"
                         android:layout_marginTop="10dp"
-                        android:text="*Reason for consultation"
+                        android:text="*Raison de la consultation"
                         android:textColor="#000" />
 
                     <LinearLayout
@@ -137,7 +137,7 @@
                             android:layout_margin="10dp"
                             android:layout_weight="1"
                             android:background="@drawable/edit_text_bg"
-                            android:hint="First Name"
+                            android:hint="Prénom"
                             android:inputType="textCapWords"
                             android:padding="10dp" />
 
@@ -148,7 +148,7 @@
                             android:layout_margin="10dp"
                             android:layout_weight="1"
                             android:background="@drawable/edit_text_bg"
-                            android:hint="Last Name"
+                            android:hint="Nom de famille"
                             android:inputType="textCapWords"
                             android:padding="10dp" />
 
@@ -162,7 +162,7 @@
                         android:layout_margin="10dp"
                         android:layout_weight="1"
                         android:background="@drawable/edit_text_bg"
-                        android:hint="Phone Number"
+                        android:hint="Numéro de téléphone"
                         android:inputType="phone"
                         android:padding="10dp" />
 
@@ -180,7 +180,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="15dp"
                         android:layout_marginTop="10dp"
-                        android:text="*Patient"
+                        android:text="*Les patients"
                         android:textColor="#000" />
 
 
@@ -207,7 +207,7 @@
                     android:layout_gravity="right"
                     android:layout_margin="10dp"
                     android:layoutDirection="rtl"
-                    android:text="Add an appointment for the new patient" />
+                    android:text="Ajouter un rendez-vous pour le nouveau patient" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -219,21 +219,21 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="15dp"
                         android:layout_marginTop="10dp"
-                        android:text="Description"
+                        android:text="La description"
                         android:textColor="#000" />
 
                     <EditText
                         android:id="@+id/description"
                         android:layout_width="match_parent"
                         android:layout_height="100dp"
-                        android:scrollbars="vertical"
                         android:layout_margin="10dp"
-                        android:inputType="textCapSentences|textImeMultiLine"
                         android:background="@drawable/edit_text_bg"
                         android:gravity="top"
-                        android:hint="Text..."
+                        android:hint="Description..."
+                        android:inputType="textCapSentences|textImeMultiLine"
                         android:lines="4"
-                        android:padding="5dp" />
+                        android:padding="5dp"
+                        android:scrollbars="vertical" />
                 </LinearLayout>
 
                 <Button
@@ -243,21 +243,23 @@
                     android:layout_margin="20dp"
                     android:background="@drawable/btn_bg"
                     android:inputType="text"
-                    android:text="Add Appointment"
+                    android:text="Enregstrer"
                     android:textColor="#fff" />
             </LinearLayout>
         </androidx.cardview.widget.CardView>
     </ScrollView>
+
     <RelativeLayout
-        android:alpha="0.8"
-        android:background="#fff"
-        android:visibility="gone"
         android:id="@+id/wholeLayout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:alpha="0.8"
+        android:background="#fff"
+        android:visibility="gone">
+
         <ProgressBar
             android:layout_width="wrap_content"
-            android:layout_centerInParent="true"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true" />
     </RelativeLayout>
 </RelativeLayout>
