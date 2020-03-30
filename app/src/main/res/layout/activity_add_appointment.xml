@@ -207,7 +207,7 @@
                     android:layout_gravity="right"
                     android:layout_margin="10dp"
                     android:layoutDirection="rtl"
-                    android:text="Ajouter un rendez-vous pour le nouveau patient" />
+                    android:text="Ajoutez un rendez-vous pour un nouveau patient" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -229,7 +229,7 @@
                         android:layout_margin="10dp"
                         android:background="@drawable/edit_text_bg"
                         android:gravity="top"
-                        android:hint="Description..."
+                        android:hint="La description..."
                         android:inputType="textCapSentences|textImeMultiLine"
                         android:lines="4"
                         android:padding="5dp"

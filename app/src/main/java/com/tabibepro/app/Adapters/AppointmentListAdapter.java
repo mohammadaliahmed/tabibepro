@@ -47,13 +47,13 @@ public class AppointmentListAdapter extends RecyclerView.Adapter<AppointmentList
     public void onBindViewHolder(@NonNull ViewHolder holder, final int position) {
         final AppointmentsModel model = itemList.get(position);
 
-        holder.patientInfo.setText("Nom : " + model.getPatientName() + "\nRaison: " + model.getConsultationReasonName());
-        holder.bookingInfo.setText("Téléphone : " + model.getAppointmentDate() + "\nFente: " + model.getDoctorSlot());
+        holder.patientInfo.setText("Nom : " + model.getPatientName() + "\nTéléphone: " + model.getPhone() + "\nRaison: " + model.getConsultationReasonName());
+        holder.bookingInfo.setText("Date : " + model.getAppointmentDate() + "\nFente: " + model.getDoctorSlot());
 
         holder.delete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                callbacks.onDelete(model,position);
+                callbacks.onDelete(model, position);
             }
         });
         holder.history.setOnClickListener(new View.OnClickListener() {
@@ -94,6 +94,6 @@ public class AppointmentListAdapter extends RecyclerView.Adapter<AppointmentList
 
         public void onOrdinance(AppointmentsModel model);
 
-        public void onDelete(AppointmentsModel model,int position);
+        public void onDelete(AppointmentsModel model, int position);
     }
 }
