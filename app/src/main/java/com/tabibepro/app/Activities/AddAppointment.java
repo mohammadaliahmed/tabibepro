@@ -145,17 +145,17 @@ public class AddAppointment extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (dateSeleced == null) {
-                    CommonUtils.showToast("Please select date");
+                    CommonUtils.showToast("Veuillez sélectionner la date");
                 } else if (slotId == null) {
-                    CommonUtils.showToast("Please select slot id");
+                    CommonUtils.showToast("Veuillez sélectionner l'identifiant de l'emplacement");
                 } else {
                     if (newPatient) {
                         if (firstName.getText().length() == 0) {
-                            firstName.setError("Enter first name");
+                            firstName.setError("entrez votre prénom");
                         } else if (lastName.getText().length() == 0) {
-                            lastName.setError("Enter last name");
+                            lastName.setError("Entrer le nom de famille");
                         } else if (phone.getText().length() == 0) {
-                            phone.setError("Enter phone");
+                            phone.setError("Entrez votre téléphone");
                         } else {
                             submitAppointment();
                         }
@@ -211,7 +211,7 @@ public class AddAppointment extends AppCompatActivity {
                 wholeLayout.setVisibility(View.GONE);
                 if (response.code() == 200) {
 //                    CommonUtils.showToast(response.message());
-                    CommonUtils.showToast("Appointment Added");
+                    CommonUtils.showToast("Rendez-vous ajouté");
                     finish();
                 } else {
                     try {
@@ -347,7 +347,7 @@ public class AddAppointment extends AppCompatActivity {
 
     private void getDoctorsDaysSlotsFromServer(String date) {
         UserClient getResponse = AppConfig.getRetrofit().create(UserClient.class);
-        Call<ScheduleListResponse> call = getResponse.doctor_date_shots(AppConfig.API_USERNAME, AppConfig.API_PASSWORD,
+        Call<ScheduleListResponse> call = getResponse.doctor_slots_listing(AppConfig.API_USERNAME, AppConfig.API_PASSWORD,
                 SharedPrefs.getUserModel().getId(), date);
         call.enqueue(new Callback<ScheduleListResponse>() {
             @Override
@@ -358,8 +358,8 @@ public class AddAppointment extends AppCompatActivity {
 //                        slotsList = object.getData();
                         slotsList.clear();
                         List<ScheduleModel> list = object.getData();
-                        for(ScheduleModel model:list){
-                            if(model.getIs_free().equalsIgnoreCase("y")){
+                        for (ScheduleModel model : list) {
+                            if (model.getIs_free().equalsIgnoreCase("y")) {
                                 slotsList.add(model);
                             }
                         }

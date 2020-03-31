@@ -52,7 +52,7 @@ public class ResetPassword extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (email.getText().length() == 0) {
-                    email.setError("Enter email");
+                    email.setError("Entrez votre e-mail");
                 } else {
                     callResetApi();
                 }

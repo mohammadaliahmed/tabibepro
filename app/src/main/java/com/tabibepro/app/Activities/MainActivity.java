@@ -157,7 +157,7 @@ public class MainActivity extends AppCompatActivity
                 if (response.code() == 200) {
                     itemList.remove(position);
                     adapter.setItemList(itemList);
-                    CommonUtils.showToast("Deleted");
+                    CommonUtils.showToast("Effacé");
 //                    try {
 //                        JSONObject jObjError = new JSONObject(response.body().string());
 //                        CommonUtils.showToast(jObjError.getString("message"));
@@ -168,7 +168,7 @@ public class MainActivity extends AppCompatActivity
                 } else {
                     itemList.remove(position);
                     adapter.setItemList(itemList);
-                    CommonUtils.showToast("Deleted");
+                    CommonUtils.showToast("Effacé");
                     try {
                         JSONObject jObjError = new JSONObject(response.errorBody().string());
 //                        CommonUtils.showToast(jObjError.getString("message"));

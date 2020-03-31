@@ -108,21 +108,21 @@ public class Register extends AppCompatActivity {
 
 //                startActivity(new Intent(Login.this,MainActivity.class));
                 if (firstName.getText().length() == 0) {
-                    firstName.setError("Enter first name");
+                    firstName.setError("entrez votre prénom");
                 } else if (lastName.getText().length() == 0) {
-                    lastName.setError("Enter lastname");
+                    lastName.setError("Entrer le nom de famille");
                 } else if (email.getText().length() == 0) {
-                    email.setError("Enter email");
+                    email.setError("Entrez votre e-mail");
                 } else if (!email.getText().toString().contains("@")) {
-                    email.setError("Enter email");
+                    email.setError("Entrez votre e-mail");
                 } else if (password.getText().length() == 0) {
-                    password.setError("Enter password");
+                    password.setError("Entrer le mot de passe");
                 } else if (password.getText().length() < 8) {
-                    password.setError("Enter 8 characters atleast");
+                    password.setError("Entrez au moins 8 caractères");
                 } else if (!password_Validation(password.getText().toString())) {
                     CommonUtils.showToast(getResources().getString(R.string.password_valid_error));
                 } else if (gender == null) {
-                    CommonUtils.showToast("Please select gender");
+                    CommonUtils.showToast("Veuillez sélectionner le sexe");
                 } else {
 
                     registerUser();
@@ -266,7 +266,7 @@ public class Register extends AppCompatActivity {
 
                         } else {
                             wholeLayout.setVisibility(View.GONE);
-                            CommonUtils.showToast("Wrong email or password");
+                            CommonUtils.showToast("E-mail ou mot de passe incorrect");
                         }
                     }
                 }
@@ -284,7 +284,7 @@ public class Register extends AppCompatActivity {
     }
 
     private void launchHomeScreen() {
-        CommonUtils.showToast("Signup Successful");
+        CommonUtils.showToast("Inscription réussie");
         startActivity(new Intent(Register.this, MainActivity.class));
         finish();
     }

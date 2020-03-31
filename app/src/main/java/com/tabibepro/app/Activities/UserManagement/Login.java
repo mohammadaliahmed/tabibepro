@@ -69,11 +69,11 @@ public class Login extends AppCompatActivity {
 
 //                startActivity(new Intent(Login.this,MainActivity.class));
                 if (email.getText().length() == 0) {
-                    email.setError("Enter email");
+                    email.setError("Entrez votre e-mail");
                 } else if (!email.getText().toString().contains("@")) {
-                    email.setError("Enter valid email");
+                    email.setError("Entrez une adresse email valide");
                 } else if (password.getText().length() == 0) {
-                    password.setError("Enter password");
+                    password.setError("Entrer le mot de passe");
                 } else {
 
                     loginUser();
@@ -135,7 +135,7 @@ public class Login extends AppCompatActivity {
 
                         } else {
                             wholeLayout.setVisibility(View.GONE);
-                            CommonUtils.showToast("Wrong email or password");
+                            CommonUtils.showToast("E-mail ou mot de passe incorrect");
                         }
                     }
                 }

@@ -81,6 +81,17 @@ public class CommonUtils {
 
     }
 
+    public static String getHourOnly(long smsTimeInMilis) {
+        Calendar smsTime = Calendar.getInstance();
+        smsTime.setTimeInMillis(smsTimeInMilis);
+
+        Calendar now = Calendar.getInstance();
+
+
+        return DateFormat.format("hh", smsTime).toString();
+
+    }
+
     public static void showToast(final String msg) {
         new Handler(Looper.getMainLooper()).post(new Runnable() {
             @SuppressLint("WrongConstant")
@@ -89,12 +100,12 @@ public class CommonUtils {
             }
         });
     }
-    
+
 
     public static String commaSeparated(List<String> list) {
         String abc = "";
         for (String value : list) {
-            if(value!=null) {
+            if (value != null) {
                 if (abc.equalsIgnoreCase("")) {
                     abc = value;
                 } else {

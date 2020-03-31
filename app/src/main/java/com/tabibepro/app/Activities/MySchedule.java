@@ -100,9 +100,9 @@ public class MySchedule extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (mStartHour == 0) {
-                    CommonUtils.showToast("Select start time");
+                    CommonUtils.showToast("Sélectionnez l'heure de début");
                 } else if (mEndHour == 0) {
-                    CommonUtils.showToast("Select end time");
+                    CommonUtils.showToast("Sélectionnez l'heure de fin");
                 } else {
                     sendDataToServer();
                 }
@@ -255,7 +255,7 @@ public class MySchedule extends AppCompatActivity {
     private void getDataFromServer() {
         wholeLayout.setVisibility(View.VISIBLE);
         UserClient getResponse = AppConfig.getRetrofit().create(UserClient.class);
-        Call<ScheduleListResponse> call = getResponse.doctor_slots_listing(AppConfig.API_USERNAME, AppConfig.API_PASSWORD,
+        Call<ScheduleListResponse> call = getResponse.get_all_doctor_slots(AppConfig.API_USERNAME, AppConfig.API_PASSWORD,
                 SharedPrefs.getUserModel().getId());
         call.enqueue(new Callback<ScheduleListResponse>() {
             @Override
@@ -304,7 +304,7 @@ public class MySchedule extends AppCompatActivity {
                     scheduleList.remove(position);
 
                     adapter.setItemList(scheduleList);
-                    CommonUtils.showToast("Delete Successful");
+                    CommonUtils.showToast("Suppression réussie");
 
 
                 } else {

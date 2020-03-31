@@ -151,11 +151,11 @@ public class Profile extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (password.getText().length() > 0 && password.getText().length() < 7) {
-                    password.setError("Enter 7 or more characters");
+                    password.setError("Saisissez 7 caractères ou plus");
                 } else {
 
                     if (!confirmPassword.getText().toString().equals(password.getText().toString())) {
-                        confirmPassword.setError("Password Do not match");
+                        confirmPassword.setError("Mot de passe Ne correspond pas");
                     } else {
 
                         callApi();
@@ -227,7 +227,7 @@ public class Profile extends AppCompatActivity {
             public void onResponse(Call<DoctorProfileResponse> call, Response<DoctorProfileResponse> response) {
                 wholeLayout.setVisibility(View.GONE);
                 if (response.code() == 200) {
-                    CommonUtils.showToast("Profile updated");
+                    CommonUtils.showToast("Profil mis à jour");
                     finish();
                 } else {
                     try {

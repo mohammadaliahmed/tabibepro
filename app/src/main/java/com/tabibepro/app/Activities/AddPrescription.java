@@ -119,7 +119,7 @@ public class AddPrescription extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (description.getText().length() == 0) {
-                    description.setError("Enter description");
+                    description.setError("Entrez la description");
                 } else {
                     uploadPrescription();
                 }

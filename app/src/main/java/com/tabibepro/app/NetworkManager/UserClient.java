@@ -95,21 +95,21 @@ public interface UserClient {
             @Field("doctor_id") String first_name
     );
 
-    @POST("doctor_api/doctor_slots_listing")
+    @POST("doctor_api/get_all_doctor_slots")
     @FormUrlEncoded
-    Call<ScheduleListResponse> doctor_slots_listing(
+    Call<ScheduleListResponse> get_all_doctor_slots(
             @Field("api_username") String apiUsername,
             @Field("api_password") String apiPassword,
             @Field("doctor_id") String first_name
     );
 
-    @POST("doctor_api/doctor_date_shots")
+    @POST("doctor_api/doctor_slots_listing")
     @FormUrlEncoded
-    Call<ScheduleListResponse> doctor_date_shots(
+    Call<ScheduleListResponse> doctor_slots_listing(
             @Field("api_username") String apiUsername,
             @Field("api_password") String apiPassword,
             @Field("doctor_id") String id,
-            @Field("date") String date
+            @Field("selected_date") String date
     );
 
     @POST("doctor_api/delete_doctor_slot")

@@ -88,7 +88,7 @@
             android:layout_margin="20dp"
             android:background="@drawable/btn_bg"
             android:inputType="text"
-            android:text="S'inscrirer"
+            android:text="S’inscrire"
             android:textColor="#fff" />
 
 
