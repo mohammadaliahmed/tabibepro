@@ -164,7 +164,7 @@ public interface UserClient {
 
     @POST("doctor_api/update_doc_profile")
     @FormUrlEncoded
-    Call<DoctorProfileResponse> update_doc_profile(
+    Call<ResponseBody> update_doc_profile(
             @Field("api_username") String apiUsername,
             @Field("api_password") String apiPassword,
             @Field("doctor_id") String doctor_id,

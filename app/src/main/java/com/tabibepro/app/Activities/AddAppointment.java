@@ -14,6 +14,7 @@ import android.view.WindowManager;
 import android.view.inputmethod.EditorInfo;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
@@ -22,6 +23,7 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.tabibepro.app.Models.ConsultationReasonModel;
 import com.tabibepro.app.Models.DoctorDaysModel;
@@ -44,9 +46,11 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.HashMap;
 import java.util.List;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.AppCompatAutoCompleteTextView;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -55,6 +59,7 @@ public class AddAppointment extends AppCompatActivity {
 
 
     List<PatientModel> patientList = new ArrayList<>();
+    HashMap<String, PatientModel> patientMap = new HashMap<>();
     private List<DoctorDaysModel> daysList = new ArrayList<>();
     private List<ScheduleModel> slotsList = new ArrayList<>();
     private List<ConsultationReasonModel> consultationList = new ArrayList<>();
@@ -148,6 +153,8 @@ public class AddAppointment extends AppCompatActivity {
                     CommonUtils.showToast("Veuillez sélectionner la date");
                 } else if (slotId == null) {
                     CommonUtils.showToast("Veuillez sélectionner l'identifiant de l'emplacement");
+                } else if (consultationReasonModel == null) {
+                    CommonUtils.showToast("Sélectionner la raison de la consultation");
                 } else {
                     if (newPatient) {
                         if (firstName.getText().length() == 0) {
@@ -160,7 +167,12 @@ public class AddAppointment extends AppCompatActivity {
                             submitAppointment();
                         }
                     } else {
-                        submitAppointment();
+                        if (patient != null) {
+                            submitAppointment();
+                        } else {
+                            CommonUtils.showToast("Sélectionner un patient");
+                        }
+
 
                     }
                 }
@@ -251,6 +263,9 @@ public class AddAppointment extends AppCompatActivity {
 
                             }
                         });
+                        for (PatientModel model : patientList) {
+                            patientMap.put(model.getFirstName() + " " + model.getLastName(), model);
+                        }
 
                         setupPatientSpinner();
                     }
@@ -303,6 +318,7 @@ public class AddAppointment extends AppCompatActivity {
                 if (response.code() == 200) {
                     DoctorDaysResponse object = response.body();
                     if (object != null && object.getData() != null && object.getData().size() > 0) {
+                        daysList.clear();
                         daysList = object.getData();
                         setupDaysSpinner();
                     }
@@ -318,11 +334,24 @@ public class AddAppointment extends AppCompatActivity {
     }
 
     private void setupPatientSpinner() {
+
+        AutoCompleteTextView autoCompletePatient = findViewById(R.id.autoCompletePatient);
         final List<String> list = new ArrayList<String>();
-        list.add("Select Patient");
+
         for (PatientModel model : patientList) {
             list.add(model.getFirstName() + " " + model.getLastName());
         }
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>
+                (this, android.R.layout.select_dialog_item, list);
+        autoCompletePatient.setThreshold(1); //will start working from first character
+        autoCompletePatient.setAdapter(adapter);
+        autoCompletePatient.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                patient = patientMap.get(parent.getAdapter().getItem(position).toString());
+
+            }
+        });
         ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this,
                 android.R.layout.simple_spinner_item, list);
         dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);

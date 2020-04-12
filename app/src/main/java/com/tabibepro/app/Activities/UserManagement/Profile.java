@@ -58,6 +58,7 @@ import java.util.Map;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import de.hdodenhof.circleimageview.CircleImageView;
+import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -89,7 +90,7 @@ public class Profile extends AppCompatActivity {
     CircleImageView profilePicture;
     RelativeLayout wholeLayout;
     private int speciWhich;
-    private ArrayList<String> selectedConsultation = new ArrayList<>();
+    private HashMap<String, String> selectedConsultation = new HashMap<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -192,7 +193,7 @@ public class Profile extends AppCompatActivity {
 
 
         UserClient getResponse = AppConfig.getRetrofit().create(UserClient.class);
-        Call<DoctorProfileResponse> call = getResponse.update_doc_profile(
+        Call<ResponseBody> call = getResponse.update_doc_profile(
                 AppConfig.API_USERNAME,
                 AppConfig.API_PASSWORD,
                 SharedPrefs.getUserModel().getId(),
@@ -222,9 +223,9 @@ public class Profile extends AppCompatActivity {
                 "1"
 
         );
-        call.enqueue(new Callback<DoctorProfileResponse>() {
+        call.enqueue(new Callback<ResponseBody>() {
             @Override
-            public void onResponse(Call<DoctorProfileResponse> call, Response<DoctorProfileResponse> response) {
+            public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
                 wholeLayout.setVisibility(View.GONE);
                 if (response.code() == 200) {
                     CommonUtils.showToast("Profil mis à jour");
@@ -243,7 +244,7 @@ public class Profile extends AppCompatActivity {
             }
 
             @Override
-            public void onFailure(Call<DoctorProfileResponse> call, Throwable t) {
+            public void onFailure(Call<ResponseBody> call, Throwable t) {
                 wholeLayout.setVisibility(View.GONE);
                 CommonUtils.showToast(t.getMessage());
             }
@@ -312,7 +313,7 @@ public class Profile extends AppCompatActivity {
 
                         }
                         for (SelectedConsultationReason item : object.getSelectedConsultationReasons()) {
-                            selectedConsultation.add(item.getConsultationReasonId());
+                            selectedConsultation.put(item.getConsultationReasonId(), item.getConsultationReasonId());
                             consultationSelectedMap.put(item.getConsultationReasonId(), consulListMao.get(item.getConsultationReasonId()));
 
 
@@ -335,9 +336,10 @@ public class Profile extends AppCompatActivity {
                         specialitiesSpinner.setText(specialitiesListMao.get(specialityId));
                         List<String> cons = new ArrayList<>();
 
-                        for (String abc : selectedConsultation) {
-                            cons.add(consulListMao.get(abc));
+                        for (Map.Entry<String, String> abc : selectedConsultation.entrySet()) {
+                            cons.add(consulListMao.get(abc.getValue()));
                         }
+
                         consultationSpinner.setText("Consultation: " + CommonUtils.commaSeparated(cons));
                         if (model.getGender().equalsIgnoreCase("Male")) {
                             male.setChecked(true);
@@ -392,7 +394,7 @@ public class Profile extends AppCompatActivity {
         int abc = 0;
 
         for (AllConsultationReason model : consultationList) {
-            if (selectedConsultation.contains(model.getId())) {
+            if (selectedConsultation.containsKey(model.getId())) {
                 is_checked[abc] = true;
             } else {
                 is_checked[abc] = false;
