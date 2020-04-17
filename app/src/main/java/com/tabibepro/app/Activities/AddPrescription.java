@@ -135,14 +135,14 @@ public class AddPrescription extends AppCompatActivity {
         builder.setMessage("Voulez-vous supprimer cette prescription? ");
 
         // add the buttons
-        builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+        builder.setPositiveButton("Oui", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
                 deletePrescription(model, position);
 
             }
         });
-        builder.setNegativeButton("Cancel", null);
+        builder.setNegativeButton("Annuler", null);
 
         // create and show the alert dialog
         AlertDialog dialog = builder.create();

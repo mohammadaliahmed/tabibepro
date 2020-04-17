@@ -1,11 +1,15 @@
 package com.tabibepro.app.Activities.UserManagement;
 
+import android.Manifest;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
+import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Base64;
 import android.view.Menu;
@@ -51,12 +55,14 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.AbstractSequentialList;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
 import de.hdodenhof.circleimageview.CircleImageView;
 import okhttp3.ResponseBody;
 import retrofit2.Call;
@@ -101,6 +107,7 @@ public class Profile extends AppCompatActivity {
             getSupportActionBar().setDisplayShowHomeEnabled(true);
         }
         this.setTitle("Mon profil");
+        getPermissions();
         initUi();
         getDataFromServer();
     }
@@ -306,8 +313,6 @@ public class Profile extends AppCompatActivity {
 
                     if (object.getAllConsultationReasons() != null) {
                         consultationList = object.getAllConsultationReasons();
-
-//                        setupConsultationSpinner();
                         for (AllConsultationReason item : consultationList) {
                             consulListMao.put(item.getId(), item.getName());
 
@@ -315,7 +320,6 @@ public class Profile extends AppCompatActivity {
                         for (SelectedConsultationReason item : object.getSelectedConsultationReasons()) {
                             selectedConsultation.put(item.getConsultationReasonId(), item.getConsultationReasonId());
                             consultationSelectedMap.put(item.getConsultationReasonId(), consulListMao.get(item.getConsultationReasonId()));
-
 
                         }
 
@@ -357,7 +361,7 @@ public class Profile extends AppCompatActivity {
                         work.setText(model.getWorksPublications());
                         spokenLanguage.setText(model.getSpokenLanguages());
                         try {
-                            Glide.with(Profile.this).load(AppConfig.BASE_URL_Image + model.getImagePath()).into(profilePicture);
+                            Glide.with(Profile.this).load(AppConfig.BASE_URL_Image + model.getImagePath()).placeholder(R.drawable.boss).into(profilePicture);
 
                         } catch (Exception e) {
 
@@ -417,7 +421,7 @@ public class Profile extends AppCompatActivity {
                     }
                 });
 
-        builderDialog.setPositiveButton("OK",
+        builderDialog.setPositiveButton("Oui",
                 new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
@@ -428,7 +432,7 @@ public class Profile extends AppCompatActivity {
                     }
                 });
 
-        builderDialog.setNegativeButton("Cancel",
+        builderDialog.setNegativeButton("Annuler",
                 new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
@@ -509,7 +513,7 @@ public class Profile extends AppCompatActivity {
 //                        specialitiesList.get(which).getName());
             }
         });
-        builderDialog.setPositiveButton("OK",
+        builderDialog.setPositiveButton("Oui",
                 new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
@@ -520,7 +524,7 @@ public class Profile extends AppCompatActivity {
                     }
                 });
 
-        builderDialog.setNegativeButton("Cancel",
+        builderDialog.setNegativeButton("Annuler",
                 new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
@@ -555,7 +559,7 @@ public class Profile extends AppCompatActivity {
             mSelected = Matisse.obtainResult(data);
 
             mSelected = Matisse.obtainResult(data);
-            Glide.with(Profile.this).load(mSelected.get(0)).into(profilePicture);
+            Glide.with(Profile.this).load(mSelected.get(0)).placeholder(R.drawable.boss).into(profilePicture);
             final InputStream imageStream;
             try {
                 imageStream = getContentResolver().openInputStream(mSelected.get(0));
@@ -567,5 +571,33 @@ public class Profile extends AppCompatActivity {
                 e.printStackTrace();
             }
         }
+    }
+    private void getPermissions() {
+        int PERMISSION_ALL = 1;
+        String[] PERMISSIONS = {
+                Manifest.permission.READ_EXTERNAL_STORAGE,
+                Manifest.permission.WRITE_EXTERNAL_STORAGE,
+
+
+        };
+
+        if (!hasPermissions(this, PERMISSIONS)) {
+            ActivityCompat.requestPermissions(this, PERMISSIONS, PERMISSION_ALL);
+        } else {
+        }
+    }
+
+
+    public boolean hasPermissions(Context context, String... permissions) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M && context != null && permissions != null) {
+            for (String permission : permissions) {
+                if (ActivityCompat.checkSelfPermission(context, permission) != PackageManager.PERMISSION_GRANTED) {
+                    return false;
+                } else {
+
+                }
+            }
+        }
+        return true;
     }
 }

@@ -221,18 +221,20 @@ public class AddAppointment extends AppCompatActivity {
             @Override
             public void onResponse(Call<PatientsListResponse> call, Response<PatientsListResponse> response) {
                 wholeLayout.setVisibility(View.GONE);
-                if (response.code() == 200) {
-//                    CommonUtils.showToast(response.message());
-                    CommonUtils.showToast("Rendez-vous ajouté");
-                    finish();
-                } else {
-                    try {
-                        JSONObject jObjError = new JSONObject(response.errorBody().string());
-                        CommonUtils.showToast(jObjError.getString("message"));
-                    } catch (Exception e) {
+                CommonUtils.showToast("Rendez-vous ajouté");
 
-                    }
-                }
+//                if (response.code() == 200) {
+////                    CommonUtils.showToast(response.message());
+//                    CommonUtils.showToast("Rendez-vous ajouté");
+//                    finish();
+//                } else {
+//                    try {
+//                        JSONObject jObjError = new JSONObject(response.errorBody().string());
+//                        CommonUtils.showToast(jObjError.getString("message"));
+//                    } catch (Exception e) {
+//
+//                    }
+//                }
             }
 
             @Override

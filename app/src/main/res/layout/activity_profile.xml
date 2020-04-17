@@ -39,6 +39,12 @@
 
 
                     </de.hdodenhof.circleimageview.CircleImageView>
+                    <TextView
+                        android:text="”Photo de profil”"
+                        android:layout_gravity="center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        />
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -408,7 +414,7 @@
                         android:layout_margin="10dp"
                         android:background="@drawable/btn_bg"
                         android:inputType="text"
-                        android:text="Update"
+                        android:text="Enregister"
                         android:textColor="#fff" />
                 </LinearLayout>
 

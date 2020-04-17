@@ -101,8 +101,8 @@ public class MainActivity extends AppCompatActivity
 
             @Override
             public void onOrdinance(AppointmentsModel model) {
-                Intent i =new Intent(MainActivity.this,AddPrescription.class);
-                i.putExtra("appointmentId",model.getAppointmentId());
+                Intent i = new Intent(MainActivity.this, AddPrescription.class);
+                i.putExtra("appointmentId", model.getAppointmentId());
                 startActivity(i);
             }
 
@@ -129,18 +129,18 @@ public class MainActivity extends AppCompatActivity
 
     private void showDeleteAlert(final AppointmentsModel model, final int position) {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("Alert");
-        builder.setMessage("Do you want to delete this appointment? ");
+        builder.setTitle("Alerte");
+        builder.setMessage("Souhaitez-vous supprimer ce rendez-vous ? ");
 
         // add the buttons
-        builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+        builder.setPositiveButton("Oui", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
                 deleteAppointmentApi(model, position);
 
             }
         });
-        builder.setNegativeButton("Cancel", null);
+        builder.setNegativeButton("Annuler", null);
 
         // create and show the alert dialog
         AlertDialog dialog = builder.create();
