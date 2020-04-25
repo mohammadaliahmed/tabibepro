@@ -415,8 +415,11 @@ public class Profile extends AppCompatActivity {
                                         int whichButton, boolean isChecked) {
                         if (isChecked) {
                             consultationSelectedMap.put(consultationList.get(whichButton).getId(), consultationList.get(whichButton).getName());
+                            selectedConsultation.put(consultationList.get(whichButton).getId(), consultationList.get(whichButton).getId());
                         } else {
                             consultationSelectedMap.remove(consultationList.get(whichButton).getId());
+                            selectedConsultation.remove(consultationList.get(whichButton).getId());
+
                         }
                     }
                 });
@@ -572,6 +575,7 @@ public class Profile extends AppCompatActivity {
             }
         }
     }
+
     private void getPermissions() {
         int PERMISSION_ALL = 1;
         String[] PERMISSIONS = {

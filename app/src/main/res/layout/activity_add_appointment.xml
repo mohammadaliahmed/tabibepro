@@ -251,7 +251,7 @@
                     android:layout_margin="20dp"
                     android:background="@drawable/btn_bg"
                     android:inputType="text"
-                    android:text="Enregstrer"
+                    android:text="Enregister"
                     android:textColor="#fff" />
             </LinearLayout>
         </androidx.cardview.widget.CardView>
